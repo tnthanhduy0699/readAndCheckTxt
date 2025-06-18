@@ -58,7 +58,7 @@ int checkRegexMatch(char* line[], char* matchArray[], int lineCount) {
     int matchCount = 0;
 
     // Tạo biểu thức chính quy: dòng bắt đầu bằng "Requirements"
-    reti = regcomp(&regex, "^Requirements", REG_EXTENDED | REG_NOSUB);
+    reti = regcomp(&regex, "(Requirements|requirement)", REG_EXTENDED | REG_NOSUB | REG_ICASE);
     if (reti) {
         printf("Could not compile regex\n");
         return -1;
